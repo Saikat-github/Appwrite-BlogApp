@@ -20,15 +20,17 @@ const Post = () => {
 
   useEffect(() => {
     setError("");
-    dbService.getPost(slug).then((res) => {
-      if (res) {
-        setPost(res);
-      }
-    })
-      .catch((error) => {
-        console.log(error);
-        setError(error.message);
+    if (slug) [
+      dbService.getPost(slug).then((res) => {
+        if (res) {
+          setPost(res);
+        }
       })
+        .catch((error) => {
+          console.log(error);
+          setError(error.message);
+        })
+    ]
   }, [slug]);
 
 
@@ -50,7 +52,7 @@ const Post = () => {
     } else {
       setLoading(false);
     }
-    
+
   }
 
 

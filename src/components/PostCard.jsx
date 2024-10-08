@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import dbService from '../appwrite/data'
 
-const PostCard = ({$id, title, featuredImage}) => {
+const PostCard = ({ $id, title, featuredImage }) => {
   return (
     <Link to={`/post/${$id}`}>
       <div className='w-60  bg-gray-100 rounded-xl p-4 shadow-2xl shadow-pink-700 hover:scale-105 transition-[0.6s]'>

@@ -18,27 +18,27 @@ const Header = () => {
         {
             url: "/",
             name: "Home",
-            loggedIn: true
+            active: true
         },
         {
             url: "/login",
             name: "Login",
-            loggedIn: !authstatus
+            active: !authstatus
         },
         {
             url: "/signup",
             name: "SignUp",
-            loggedIn: !authstatus
+            active: !authstatus
         },
         {
             url: "/add-post",
             name: "Add Post",
-            loggedIn: authstatus
+            active: authstatus
         },
         {
             url: "/profile",
             name: "Profile",
-            loggedIn: authstatus
+            active: authstatus
         }
     ]
 
@@ -58,7 +58,7 @@ const Header = () => {
                 <div className='flex z-10'>
                     <ul className={`navitems text-white md:flex gap-7 text-xl ${options ? "flex flex-col gap-7 mt-48 bg-gray-900 py-6 px-2 rounded-lg" : "hidden"}`}>
                         {navItems.map((item, idx) => (
-                            item.loggedIn ? <li className='px-5 rounded-full hover:bg-gray-600 cursor-pointer py-1' key={idx} onClick={() => onClickHandler(item.url)}>{item.name}</li> : null
+                            item.active ? <li className='px-5 rounded-full hover:bg-gray-600 cursor-pointer py-1' key={idx} onClick={() => onClickHandler(item.url)}>{item.name}</li> : null
                         ))}
 
                         {authstatus && <li className='px-5 rounded-full hover:bg-gray-600 cursor-pointer py-1'><LogoutBtn setOptions={setOptions}/></li>}
