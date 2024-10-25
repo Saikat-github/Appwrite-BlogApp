@@ -57,17 +57,17 @@ const Post = () => {
 
 
   return post ? (
-    <div className="p-8 flex gap-10">
+    <div className="p-2 sm:p-8 flex flex-col items-center gap-6">
       <div>
-        <div className="w-3/4 flex justify-center mb-4 relative border rounded-xl p-2">
+        <div className="w-full flex justify-center mb-4 relative border rounded-xl sm:p-2">
           <img
             src={dbService.getFilePreview(post.featuredImage)}
             alt={post.title}
-            className="rounded-xl"
+            className="rounded-xl sm:h-80"
           />
         </div>
         <div className="w-full mb-6">
-          <h1 className="text-2xl font-bold">{post.title}</h1>
+          <h1 className="text-2xl font-bold text-stone-800">{post.title}</h1>
         </div>
         <div className="browser-css">
           {parse(post.content)}
@@ -75,13 +75,13 @@ const Post = () => {
       </div>
 
       {isAuthor && (
-        <div className=" space-y-5">
+        <div className="w-full space-y-5 flex flex-col mt-10 sm:text-sm text-xs">
           <Link to={`/edit-post/${post.$id}`}>
-            <Button bgColor="bg-green-600" className="mr-3 w-36 hover:bg-opacity-85">
+            <Button bgColor="bg-green-600" className="sm:text-sm text-xs mr-3 w-36 hover:bg-opacity-85">
               Edit
             </Button>
           </Link>
-          <Button bgColor="bg-red-700 flex gap-3" onClick={deletePost} className='w-36 hover:bg-opacity-85 flex gap-3 justify-center'>
+          <Button bgColor="bg-red-700 flex gap-3" onClick={deletePost} className='sm:text-sm text-xs w-36 hover:bg-opacity-85 flex gap-3 justify-center'>
             Delete
             {loading && <div className="h-6 w-6 border-4 border-t-blue-500 rounded-full animate-spin "></div>}
           </Button>

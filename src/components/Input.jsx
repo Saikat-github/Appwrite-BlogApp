@@ -8,7 +8,7 @@ const Input = ({ label, type = "text", className = "", ...props }, ref) => {
     return (
         <div className='w-full'>
             {label && <label
-                className='inline-block mb-1 pl-1 text-2xl'
+                className='inline-block mb-1 pl-1 md:text-2xl'
                 htmlFor={id}>
                 {label} :
             </label>

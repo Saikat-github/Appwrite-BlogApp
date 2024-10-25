@@ -7,12 +7,12 @@ const Select = ({ options = [], label, ...props }, ref) => {
   
   return (
     <div>
-      {label && <label htmlFor={id} className='text-2xl'>{label}</label>}
+      {label && <label htmlFor={id} className='md:text-2xl'>{label}</label>}
       <select 
       ref={ref}
       id={id}
       {...props}
-      className='mx-6 border-2 border-gray-300 rounded-lg px-2 py-1'>
+      className='flex flex-col border-2 border-gray-300 rounded-lg px-2 py-1'>
         {options.map((option, idx) => (
           <option key={idx} value={option}>
             {option}

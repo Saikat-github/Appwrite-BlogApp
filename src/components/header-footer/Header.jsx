@@ -1,17 +1,15 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import authService from '../../appwrite/auth';
 import LogoutBtn from '../LogoutBtn';
-import cross from '../../assets/cross.svg';
-import hamburger from '../../assets/hamburger.svg'
+import cross from '../../assets/cross2.svg';
+import hamburger from '../../assets/hamburger2.svg'
+import logo from '../../assets/logo.webp'
 
 const Header = () => {
     const [options, setOptions] = useState(false);
 
     const authstatus = useSelector((state) => state.auth.status);
-    const userData = useSelector((state) => state.auth.userData);
-
     const navigate = useNavigate();
 
     const navItems = [
@@ -50,18 +48,18 @@ const Header = () => {
 
     return (
         <div>
-            <nav className='w-full bg-gray-900 h-28 flex justify-between px-12 items-center'>
-                <Link className="logo text-5xl text-white">
-                    Logo
+            <nav className='w-full bg-stone-200 h-20 flex justify-between px-4 sm:px-12 items-center'>
+                <Link>
+                    <img src={logo} className='w-16 h-16 rounded-xl' alt="" />
                 </Link>
 
                 <div className='flex z-10'>
-                    <ul className={`navitems text-white md:flex gap-7 text-xl ${options ? "flex flex-col gap-7 mt-48 bg-gray-900 py-6 px-2 rounded-lg" : "hidden"}`}>
+                    <ul className={`navitems md:flex gap-7 text-lg ${options ? "flex flex-col gap-7 mt-48 bg-stone-300 py-6 px-2" : "hidden"}`}>
                         {navItems.map((item, idx) => (
-                            item.active ? <li className='px-5 rounded-full hover:bg-gray-600 cursor-pointer py-1' key={idx} onClick={() => onClickHandler(item.url)}>{item.name}</li> : null
+                            item.active ? <li className='px-5  hover:bg-gray-300 cursor-pointer py-2' key={idx} onClick={() => onClickHandler(item.url)}>{item.name}</li> : null
                         ))}
 
-                        {authstatus && <li className='px-5 rounded-full hover:bg-gray-600 cursor-pointer py-1'><LogoutBtn setOptions={setOptions}/></li>}
+                        {authstatus && <li className='px-5 hover:bg-gray-300 cursor-pointer py-2 border-sky-600 border-2'><LogoutBtn setOptions={setOptions}/></li>}
 
                     </ul>
                     {
@@ -69,6 +67,7 @@ const Header = () => {
                     }
                 </div>
             </nav>
+            <hr className='h-0.5 bg-black'/>
         </div>
     )
 }

@@ -22,7 +22,7 @@ const App = () => {
   //     .catch((error) => {
   //       console.log("User Can't be logged in, error in app.jsx", error.message);
   //     })
-  //     .finanlly(() => setLoading(false));
+  //     .finally(() => setLoading(false));
   // }, [])
 
   useEffect(() => {
@@ -44,9 +44,9 @@ const App = () => {
   }, [])
 
   return !loading ? (
-    <div className='font-Outfit'>
+    <div className='font-OpenSans'>
       <Header />
-      <main className='bg-teal-950'>
+      <main className='bg-stone-200'>
         <Outlet />
       </main>
       <Footer />

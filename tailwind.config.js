@@ -7,7 +7,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        Outfit: ["Outfit", "sans-serif"]
+        Outfit: ["Outfit", "sans-serif"],
+        OpenSans: ["Open Sans", "sans-serif"],
+        Roboto: ["Roboto", "sans-serif"],
+        Cormorant:["Cormorant Garamond", "serif"]
       }
     },
   },

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import logo from '../../assets/logo.webp'
 
 function Footer() {
   return (
@@ -9,12 +10,12 @@ function Footer() {
           <div className="w-full p-6 md:w-1/2 lg:w-5/12">
             <div className="flex h-full flex-col justify-between">
               <div className="mb-4 inline-flex items-center">
-                <Link className="logo text-5xl text-white">
-                  Logo
+              <Link>
+                    <img src={logo} className='w-32 rounded-xl' alt="" />
                 </Link>
               </div>
               <div>
-                <p className="text-sm text-white">
+                <p className="text-xs text-white">
                   &copy; Copyright 2024. All Rights Reserved by DevUI.
                 </p>
               </div>
@@ -25,10 +26,10 @@ function Footer() {
               <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-white">
                 Company
               </h3>
-              <ul>
+              <ul className='text-xs'>
                 <li className="mb-4">
                   <Link
-                    className=" text-base font-medium text-white hover:text-white"
+                    className="font-medium text-white hover:text-white"
                     to="/"
                   >
                     Features
@@ -36,7 +37,7 @@ function Footer() {
                 </li>
                 <li className="mb-4">
                   <Link
-                    className=" text-base font-medium text-white hover:text-white"
+                    className="font-medium text-white hover:text-white"
                     to="/"
                   >
                     Pricing
@@ -44,7 +45,7 @@ function Footer() {
                 </li>
                 <li className="mb-4">
                   <Link
-                    className=" text-base font-medium text-white hover:text-white"
+                    className="font-medium text-white hover:text-white"
                     to="/"
                   >
                     Affiliate Program
@@ -52,7 +53,7 @@ function Footer() {
                 </li>
                 <li>
                   <Link
-                    className=" text-base font-medium text-white hover:text-white"
+                    className="font-medium text-white hover:text-white"
                     to="/"
                   >
                     Press Kit
@@ -66,10 +67,10 @@ function Footer() {
               <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-white">
                 Support
               </h3>
-              <ul>
+              <ul className='text-xs'>
                 <li className="mb-4">
                   <Link
-                    className=" text-base font-medium text-white hover:text-white"
+                    className="font-medium text-white hover:text-white"
                     to="/"
                   >
                     Account
@@ -77,7 +78,7 @@ function Footer() {
                 </li>
                 <li className="mb-4">
                   <Link
-                    className=" text-base font-medium text-white hover:text-white"
+                    className="font-medium text-white hover:text-white"
                     to="/"
                   >
                     Help
@@ -85,7 +86,7 @@ function Footer() {
                 </li>
                 <li className="mb-4">
                   <Link
-                    className=" text-base font-medium text-white hover:text-white"
+                    className="font-medium text-white hover:text-white"
                     to="/"
                   >
                     Contact Us
@@ -93,7 +94,7 @@ function Footer() {
                 </li>
                 <li>
                   <Link
-                    className=" text-base font-medium text-white hover:text-white"
+                    className="font-medium text-white hover:text-white"
                     to="/"
                   >
                     Customer Support
@@ -107,10 +108,10 @@ function Footer() {
               <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-white">
                 Legals
               </h3>
-              <ul>
+              <ul className='text-xs'>
                 <li className="mb-4">
                   <Link
-                    className=" text-base font-medium text-white hover:text-white"
+                    className="font-medium text-white hover:text-white"
                     to="/"
                   >
                     Terms &amp; Conditions
@@ -118,7 +119,7 @@ function Footer() {
                 </li>
                 <li className="mb-4">
                   <Link
-                    className=" text-base font-medium text-white hover:text-white"
+                    className="font-medium text-white hover:text-white"
                     to="/"
                   >
                     Privacy Policy
@@ -126,7 +127,7 @@ function Footer() {
                 </li>
                 <li>
                   <Link
-                    className=" text-base font-medium text-white hover:text-white"
+                    className="font-medium text-white hover:text-white"
                     to="/"
                   >
                     Licensing

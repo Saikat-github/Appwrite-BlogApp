@@ -90,7 +90,7 @@ const PostForm = ({ post }) => {
 
 
     return (
-        <form onSubmit={handleSubmit(submitHandler)} className='flex md:flex-row flex-col gap-12 p-8 pb-6'>
+        <form onSubmit={handleSubmit(submitHandler)} className='flex md:flex-row flex-col gap-12 py-8 md:px-8 px-2 pb-6'>
             <div className='md:w-2/3 space-y-6'>
                 <Input
                     label="Title"
