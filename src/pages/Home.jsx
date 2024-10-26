@@ -40,7 +40,7 @@ const Home = () => {
     </div>
   ) :
 
-    <div className="flex flex-wrap justify-center gap-10 p-6 h-screen">
+    <div className="py-10 flex flex-col gap-10 p-6 sm:mx-32 lg:mx-60">
       {
         posts ? posts.map((post) => (
           <div key={post.$id}>
@@ -48,8 +48,8 @@ const Home = () => {
           </div>
         )) :
           <div className='text-4xl flex flex-col lg:flex-row justify-between md:ml-20 '>
-            <div className='md:mt-20'>
-              <p className='font-Cormorant text-6xl md:text-9xl text-stone-700'>Human <br />stories & ideas</p>
+            <div className='md:mt-10'>
+              <p className='font-Cormorant text-6xl md:text-9xl text-stone-800'>Human, <br />stories & ideas</p>
               <p className='font-Cormorant my-6 text-xl md:text-3xl'>A place to read, write and deepen your understanding.</p>
               <Button onClick={() => navigate("/login")} className='bg-stone-900 hover:bg-stone-950 trnasition duration-200' bgColor={"bg-green-700"}>Start Reading</Button>
             </div>

@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import LogoutBtn from '../LogoutBtn';
 import cross from '../../assets/cross2.svg';
 import hamburger from '../../assets/hamburger2.svg'
-import logo from '../../assets/logo.webp'
+import logo from '../../assets/logo2.png'
 
 const Header = () => {
     const [options, setOptions] = useState(false);
@@ -48,13 +48,13 @@ const Header = () => {
 
     return (
         <div>
-            <nav className='w-full bg-stone-200 h-20 flex justify-between px-4 sm:px-12 items-center'>
+            <nav className='w-full bg-stone-100 h-20 flex justify-between px-4 sm:px-12 items-center'>
                 <Link>
-                    <img src={logo} className='w-16 h-16 rounded-xl' alt="" />
+                    <img src={logo} className='w-20 h-16 rounded-xl object-cover' alt="" />
                 </Link>
 
                 <div className='flex z-10'>
-                    <ul className={`navitems md:flex gap-7 text-lg ${options ? "flex flex-col gap-7 mt-48 bg-stone-300 py-6 px-2" : "hidden"}`}>
+                    <ul className={`navitems md:flex gap-7 text-sm ${options ? "flex flex-col gap-7 mt-48 bg-stone-300 py-6 px-2" : "hidden"}`}>
                         {navItems.map((item, idx) => (
                             item.active ? <li className='px-5  hover:bg-gray-300 cursor-pointer py-2' key={idx} onClick={() => onClickHandler(item.url)}>{item.name}</li> : null
                         ))}

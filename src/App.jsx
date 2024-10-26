@@ -46,7 +46,7 @@ const App = () => {
   return !loading ? (
     <div className='font-OpenSans'>
       <Header />
-      <main className='bg-stone-200'>
+      <main className='bg-stone-100'>
         <Outlet />
       </main>
       <Footer />

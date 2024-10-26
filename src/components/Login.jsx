@@ -56,7 +56,7 @@ const Login = () => {
                         </p>
                     </span>
                 </div> */}
-                <h2 className="text-center md:text-3xl font-bold leading-tight">Sign in to your account</h2>
+                <h2 className="text-center md:text-3xl leading-tight">Sign in to your account</h2>
                 <p className="mt-2 text-xs text-center md:text-sm text-black/60">
                     Don&apos;t have any account?&nbsp;
                     <Link
