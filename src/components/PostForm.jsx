@@ -51,7 +51,7 @@ const PostForm = ({ post }) => {
                     });
                 }
             }
-
+            alert("Successfully created post!")
             navigate('/');
         } catch (error) {
             setError(error.message);
