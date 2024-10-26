@@ -82,14 +82,14 @@ const Post = () => {
 
         {isAuthor && (
           <div className="w-full space-y-5 flex flex-col mt-10 sm:text-sm text-xs">
-            <Link to={`/edit-post/${post.$id}`}>
+            <Link className='w-36' to={`/edit-post/${post.$id}`}>
               <Button bgColor="bg-green-600" className="sm:text-sm text-xs mr-3 w-36 hover:bg-opacity-85">
                 Edit
               </Button>
             </Link>
-            <Button bgColor="bg-red-700 flex gap-3" onClick={deletePost} className='sm:text-sm text-xs w-36 hover:bg-opacity-85 flex gap-3 justify-center'>
+            <Button bgColor="bg-red-700" onClick={deletePost} className='sm:text-sm text-xs w-48  hover:bg-opacity-85 flex gap-3 justify-around' disabled={loading}>
               Delete
-              {loading && <div className="h-6 w-6 border-4 border-t-blue-500 rounded-full animate-spin "></div>}
+              {loading && <div className=" ml-2 h-6 w-6 border-4 border-t-blue-500 rounded-full animate-spin "></div>}
             </Button>
           </div>
         )}
