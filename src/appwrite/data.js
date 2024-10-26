@@ -30,6 +30,7 @@ export class DbService {
             )
         } catch (error) {
             console.log("Appwrite database error:createPost:", error)
+            throw error;
         }
     }
 
@@ -48,6 +49,7 @@ export class DbService {
             )
         } catch (error) {
             console.log("Appwrite database error: updatePost:", error)
+            throw error
         }
     }
 

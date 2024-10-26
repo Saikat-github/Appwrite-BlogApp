@@ -16,7 +16,7 @@ const PostForm = ({ post }) => {
     const userData = useSelector((state) => state.auth.userData)
 
 
-    const { register, handleSubmit, control, setValue, watch, getValues, formState: {isSubmitting} } = useForm({
+    const { register, handleSubmit, control, setValue, watch, getValues, formState: {isSubmitting, errors} } = useForm({
         defaultValues: {
             title: post?.title || "",
             slug: post?.$id || "",
@@ -54,8 +54,8 @@ const PostForm = ({ post }) => {
 
             navigate('/');
         } catch (error) {
-            console.log(error);
             setError(error.message);
+            
         } finally {
             setLoading(false);
         }
@@ -89,7 +89,7 @@ const PostForm = ({ post }) => {
 
 
 
-    return (
+    return error ? (<div className='py-20 px-20 text-red-600 text-sm'><span className='text-xl'>Some Error occured in creating the post!</span> <br /> {error}</div>) : (
         <form onSubmit={handleSubmit(submitHandler)} className='flex md:flex-row flex-col gap-12 py-8 md:px-8 px-2 pb-6'>
             <div className='md:w-2/3 space-y-6'>
                 <Input
@@ -111,8 +111,9 @@ const PostForm = ({ post }) => {
                     type="file"
                     label="Image"
                     accept="image/png, image/jpg, image/jpeg, image/gif"
-                    {...register("image", { required: !post })}
+                    {...register("image", { required: !post && "Please upload a picture" })}
                 />
+                
                 {post &&
                     <div>
                         <img src={dbService.getFilePreview(post.featuredImage)} className='w-12' alt="" />
@@ -129,6 +130,7 @@ const PostForm = ({ post }) => {
                     {loading ? <div className=" ml-2 h-6 w-6 border-4 border-t-blue-500 rounded-full animate-spin "></div> : null}
 
                 </Button>
+                {errors.image && <p className='text-red-600 text-xs'>{errors.image.message}</p>}
             </div>
         </form>
     )
