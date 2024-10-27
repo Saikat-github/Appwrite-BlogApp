@@ -33,12 +33,11 @@ const App = () => {
           dispatch(login( userData ));
         } else {
           dispatch(logout())
-          navigate("/login")
+
         }
       })
       .catch((error) => {
         console.log("Error occured in app.jsx, user can't be logged in", error)
-        navigate("/login")
       })
       .finally(() => setLoading(false))
   }, [])

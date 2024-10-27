@@ -63,7 +63,7 @@ const Post = () => {
 
 
   return post ? (
-      <div className="sm:mx-16 md:mx-32 lg:mx-72 p-4 sm:p-8 flex flex-col gap-6">
+      <div className="sm:mx-16 md:mx-32 lg:mx-72 p-8 sm:p-10 flex flex-col gap-6">
           <div className="w-full">
             <h1 className="text-xl sm:text-4xl font-bold text-stone-800">{post.title}</h1>
           </div>
@@ -76,7 +76,7 @@ const Post = () => {
             alt={post.title}
             className="w-full sm:h-80"
           />
-          <div className="text-sm md:text-lg">
+          <div className="text-xs md:text-lg">
             {parse(post.content)}
           </div>
 
