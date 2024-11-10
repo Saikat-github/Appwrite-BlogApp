@@ -15,7 +15,7 @@ const Login = () => {
     const [error, setError] = useState("");
     const dispatch = useDispatch();
 
-    const {register, handleSubmit, formState: {isSubmitting}} = useForm();
+    const {register, handleSubmit, formState: {isSubmitting}, reset} = useForm();
     const navigate = useNavigate();
 
     const login = async (data) => {
@@ -34,8 +34,10 @@ const Login = () => {
             }
         } catch (error) {
             setError(error.message);
+        } finally {
+            setLoading(false);
+            reset();
         }
-        setLoading(false);
     }
 
 

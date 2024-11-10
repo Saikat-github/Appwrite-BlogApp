@@ -15,7 +15,7 @@ const SignUp = () => {
     const [error, setError] = useState("");
     const dispatch = useDispatch();
 
-    const { register, handleSubmit, formState: { isSubmitting } } = useForm();
+    const { register, handleSubmit, formState: { isSubmitting }, reset } = useForm();
     const navigate = useNavigate();
 
     const create = async (data) => {
@@ -30,9 +30,13 @@ const SignUp = () => {
             }
         } catch (error) {
             setError(error.message);
+        } finally {
+            setLoading(false);
+            reset()
         }
-        setLoading(false);
     }
+
+    
     return (
         <div className="flex justify-center h-screen z-10 bg-[#00000090] animate">
             <div className={`my-2 mx-auto md:w-full max-w-lg h-3/4 bg-stone-300  p-4 md:p-10 border border-black/10 animate-[fadeIn_0.5s]`}>

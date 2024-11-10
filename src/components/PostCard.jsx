@@ -4,7 +4,7 @@ import dbService from '../appwrite/data'
 import parse from 'html-react-parser';
 import userLogo from '../assets/logo2.png'
 
-const PostCard = ({ $id, title, featuredImage, content }) => {
+const PostCard = ({ $id, title, featuredImage}) => {
 
 
   return (

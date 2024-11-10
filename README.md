@@ -16,7 +16,7 @@ Currently, two official plugins are available:
 5. Read components folder 
  - header-footer
  - Input.jsx, Select.jsx, Button.jsx 
- - Login.jsx, SignUp.jsx, LogoutBtn.jsx
+ - Login.jsx, SignUp.jsx, LogoutBtn.jsx, RTE.jsx
 6. Read PostForm.jsx
 7. Read PostCard.jsx
 8. Read Pages 

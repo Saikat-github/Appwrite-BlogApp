@@ -26,14 +26,13 @@ const App = () => {
   // }, [])
 
   useEffect(() => {
-    
     authService.getCurrentUser()
       .then((userData) => {
         if (userData) {
           dispatch(login( userData ));
         } else {
           dispatch(logout())
-
+          navigate("/login")
         }
       })
       .catch((error) => {
